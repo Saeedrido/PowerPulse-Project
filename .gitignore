@@ -1,0 +1,20 @@
+# Dependencies (never commit these — each developer runs `npm install`)
+node_modules
+node_modules/
+
+# Runtime data / database
+data/
+*.db
+*.db-journal
+
+# Test artifacts
+test-results/
+playwright-report/
+blob-report/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

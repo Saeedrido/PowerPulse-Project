@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPulse IoT Simulator</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/simulator/simulator.css">
+</head>
+<body class="sim-body">
+  <div class="card sim-card">
+    <div class="sim-device">⚡ PowerPulse Device</div>
+    <div class="sim-code">IoT SIMULATOR</div>
+
+    <div class="form-group" style="text-align:left">
+      <label for="sim-code-input">Device code</label>
+      <input id="sim-code-input" value="PP-DEMO-0001" placeholder="PP-DEMO-0001">
+    </div>
+
+    <div id="sim-light" class="sim-light off"></div>
+    <div id="sim-status" class="sim-status muted">—</div>
+
+    <div class="sim-buttons">
+      <button class="btn" id="btn-on">POWER ON</button>
+      <button class="btn btn-danger" id="btn-off">POWER OFF</button>
+    </div>
+
+    <div class="error" id="sim-err"></div>
+
+    <div class="sim-log" id="sim-log"></div>
+    <p class="muted mt" style="font-size:.8rem">Open your PowerPulse dashboard in another tab to watch the status change live.</p>
+  </div>
+
+  <script src="/simulator/simulator.js"></script>
+</body>
+</html>
