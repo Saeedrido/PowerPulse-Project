@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PowerPulse IoT Simulator</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/clearwave.css">
   <link rel="stylesheet" href="/simulator/simulator.css">
 </head>
 <body class="sim-body">
   <div class="card sim-card">
-    <div class="sim-device">⚡ PowerPulse Device</div>
+    <div class="sim-device"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>PowerPulse Device</div>
     <div class="sim-code">IoT SIMULATOR</div>
 
     <div class="form-group" style="text-align:left">
@@ -28,7 +32,7 @@
     <div class="error" id="sim-err"></div>
 
     <div class="sim-log" id="sim-log"></div>
-    <p class="muted mt" style="font-size:.8rem">Open your PowerPulse dashboard in another tab to watch the status change live.</p>
+    <p class="muted" style="font-size:.8rem;margin-top:16px">Open your PowerPulse dashboard in another tab to watch the status change live.</p>
   </div>
 
   <script src="/simulator/simulator.js"></script>

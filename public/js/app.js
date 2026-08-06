@@ -57,9 +57,25 @@ function statusBadge(status) {
   const label =
     status === 'ON' ? 'POWER AVAILABLE' :
     status === 'OFF' ? 'POWER UNAVAILABLE' : 'UNKNOWN';
-  const dot = status === 'ON' ? '🟢' : status === 'OFF' ? '🔴' : '⚪';
-  return `<span class="status ${cls}"><span class="dot"></span>${dot} ${label}</span>`;
+  return `<span class="status ${cls}"><span class="dot"></span>${label}</span>`;
 }
+
+const ICONS = {
+  bolt: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>',
+  chip: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>',
+  powerOn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 11-12.73 0"/><path d="M12 2v10"/></svg>',
+  powerOff: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>',
+};
+
+document.querySelectorAll('.js-logout').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    API.logout();
+    window.location.href = '/index.html';
+  });
+});
 
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) =>

@@ -44,7 +44,7 @@ async function load() {
             .map(
               (ev) => `<tr>
                 <td>${fmtTime(ev.recordedAt)}</td>
-                <td>📍 ${esc(ev.location)}</td>
+                <td><span class="inline-ic">${ICONS.pin}</span>${esc(ev.location)}</td>
                 <td><span class="badge ${String(ev.status).toLowerCase()}">${ev.status === 'ON' ? 'POWER ON' : 'POWER OFF'}</span></td>
               </tr>`
             )

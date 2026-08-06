@@ -15,7 +15,7 @@ function setState(s) {
   const status = document.getElementById('sim-status');
   light.className = 'sim-light ' + String(s).toLowerCase();
   status.className = 'sim-status ' + String(s).toLowerCase();
-  status.textContent = s === 'ON' ? '🟢 POWER AVAILABLE' : '🔴 POWER UNAVAILABLE';
+  status.textContent = s === 'ON' ? 'POWER AVAILABLE' : 'POWER UNAVAILABLE';
 }
 
 function showErr(msg) {
