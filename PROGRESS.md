@@ -105,8 +105,8 @@ blue & white palette, with a landing page that tells the PowerPulse project stor
 The full MVP is built, the whole UI is on the new blue & white Clearwave template, and
 the automated Playwright demo test **passes end-to-end** on Windows (native node):
 registration -> add "My Home" -> connect device -> simulator POWER OFF -> dashboard
-shows 🔴 POWER UNAVAILABLE + "Power has gone off" notification -> simulator POWER ON ->
-dashboard shows 🟢 POWER AVAILABLE + "Power has been restored" notification -> history
+shows POWER UNAVAILABLE (red status) + "Power has gone off" notification -> simulator POWER ON ->
+dashboard shows POWER AVAILABLE (green status) + "Power has been restored" notification -> history
 shows the full ON/OFF timeline.
 
 Next time you open this project, **continue from here:**
@@ -133,9 +133,9 @@ Next time you open this project, **continue from here:**
 5. Go back to **Dashboard**. Open the **IoT Simulator** in a new tab (`/simulator/simulator.html`).
 6. Set the same device code, click **POWER OFF**.
 7. Switch back to the Dashboard — within ~5 seconds it should change to
-   **🔴 POWER UNAVAILABLE** and show the notification *"Power has gone off at My Home."*
+   **POWER UNAVAILABLE** (red) and show the notification *"Power has gone off at My Home."*
 8. In the simulator click **POWER ON**.
-9. Dashboard returns to **🟢 POWER AVAILABLE** with *"Power has been restored at My Home."*
+9. Dashboard returns to **POWER AVAILABLE** (green) with *"Power has been restored at My Home."*
 10. Open **History** to see the complete ON/OFF timeline.
 
 ---

@@ -17,7 +17,7 @@ async function loadNotifications() {
     box.innerHTML = data.notifications
       .map(
         (n) =>
-          `<div class="notif"><div class="icon">${n.type === 'POWER_OFF' ? '🔴' : '🟢'}</div>
+          `<div class="notif"><div class="icon ${n.type === 'POWER_OFF' ? 'off' : 'on'}">${n.type === 'POWER_OFF' ? ICONS.powerOff : ICONS.powerOn}</div>
            <div><div class="msg">${esc(n.message)}</div>
            <div class="time">${fmtTime(n.createdAt)}</div></div></div>`
       )
@@ -46,7 +46,7 @@ async function loadLocations() {
       cards.push(`
         <div class="card loc-card">
           <div class="loc-head">
-            <div class="loc-name">📍 ${esc(loc.name)}</div>
+            <div class="loc-name"><span class="inline-ic">${ICONS.pin}</span>${esc(loc.name)}</div>
             ${statusBadge(loc.currentStatus)}
           </div>
           <div class="meta">

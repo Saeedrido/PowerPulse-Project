@@ -22,7 +22,7 @@
 
   <nav class="nav app-nav" id="mainNav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/index.html" class="nav-logo">⚡ Power<span>Pulse</span></a>
+      <a href="/index.html" class="nav-logo"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span> Power<span>Pulse</span></a>
       <ul class="nav-links" role="list">
         <li><a href="/dashboard.html" class="active">Dashboard</a></li>
         <li><a href="/history.html">History</a></li>
@@ -48,18 +48,18 @@
 
       <div class="loc-list" id="locations"></div>
       <div id="empty-state" class="empty" style="display:none">
-        <div class="big">⚡</div>
+        <div class="empty-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
         <p>No monitored locations yet.</p>
         <p><a class="btn mt" href="/setup.html" style="margin-top:16px">Add your first location</a></p>
       </div>
 
       <div class="grid-2 mt">
         <div class="card">
-          <h3 class="section-title">🔔 Notifications</h3>
+          <h3 class="section-title"><span class="inline-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>Notifications</h3>
           <div id="notifications"><p class="muted">No notifications yet.</p></div>
         </div>
         <div class="card">
-          <h3 class="section-title">🔗 IoT Simulator</h3>
+          <h3 class="section-title"><span class="inline-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span>IoT Simulator</h3>
           <p class="muted">Trigger power events from the simulator to see live updates here.</p>
           <a class="btn mt" href="/simulator/simulator.html" target="_blank">Open Simulator</a>
         </div>

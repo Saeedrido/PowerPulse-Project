@@ -47,7 +47,7 @@ function renderDevices() {
       .map(
         (d) => `<tr>
           <td><code>${esc(d.device.deviceCode)}</code></td>
-          <td>📍 ${esc(d.location)}</td>
+          <td><span class="inline-ic">${ICONS.pin}</span>${esc(d.location)}</td>
           <td>${fmtTime(d.device.lastSeenAt)}</td>
         </tr>`
       )

@@ -42,9 +42,9 @@ Then open your browser:
 3. Add a location named **My Home**.
 4. Connect a device using the code **PP-DEMO-0001**.
 5. Open the **IoT Simulator** in a new tab, set the same device code.
-6. Click **POWER OFF** → the dashboard changes to **🔴 POWER UNAVAILABLE**
+6. Click **POWER OFF** → the dashboard changes to **POWER UNAVAILABLE** (red status)
    and shows the notification *"Power has gone off at My Home."*
-7. Click **POWER ON** → the dashboard returns to **🟢 POWER AVAILABLE**.
+7. Click **POWER ON** → the dashboard returns to **POWER AVAILABLE** (green status).
 8. Open **History** to see the complete ON/OFF timeline.
 
 ---
