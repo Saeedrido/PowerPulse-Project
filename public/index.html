@@ -1,181 +1,864 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PowerPulse — Know your power, anywhere</title>
-  <meta name="description" content="PowerPulse is an IoT electricity monitoring system that tells you in real time whether power is available at your home, pharmacy, or shop — even when you're away.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+  <meta name="description" content="PowerPulse is an IoT electricity monitoring system that tells you in real time whether power is available at your home, pharmacy, or shop — even when you're away." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/clearwave.css" />
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand"><span class="brand-icon">⚡</span>Power<span>Pulse</span></div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="/login.html">Log in</a>
-      <a class="btn btn-sm" href="/register.html">Get Started</a>
-    </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="#about">About</a>
+    <a href="#screens">App</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="/register.html" class="mobile-cta btn-primary">Get Started Free</a>
   </div>
 
-  <header class="hero">
-    <div class="pill-row">
-      <span class="pill">⚡ IoT Electricity Monitoring</span>
-      <span class="pill">🟢 Real-time Status</span>
-      <span class="pill">🔔 Instant Alerts</span>
+  <!-- ── 1. NAV ── -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">⚡ Power<span>Pulse</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#screens">App</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/login.html" class="btn-ghost">Log in</a>
+        <a href="/register.html" class="btn-primary">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <h1>Know if your power is <span>ON</span> — even when you're away</h1>
-    <p class="lead">
-      PowerPulse connects a small IoT device at your home or business to the internet,
-      so you always know the current electricity status and exactly when power went
-      off and when it came back — from anywhere in the world.
-    </p>
-    <div class="cta">
-      <a class="btn" href="/register.html">Get Started Free</a>
-      <a class="btn btn-ghost" href="/login.html">Log in</a>
-    </div>
-  </header>
+  </nav>
 
-  <div class="container">
-    <div class="stats">
-      <div class="stat"><div class="n">Real-time</div><div class="l">Live status at every location</div></div>
-      <div class="stat"><div class="n">Event log</div><div class="l">Every ON/OFF change recorded</div></div>
-      <div class="stat"><div class="n">Multi-location</div><div class="l">Home, shop, pharmacy — one dashboard</div></div>
-      <div class="stat"><div class="n">0 hardware</div><div class="l">Demo works with the built-in simulator</div></div>
-    </div>
-  </div>
-
-  <section class="section" id="about">
+  <!-- ── 2. HERO ── -->
+  <section class="hero">
     <div class="container">
-      <div class="about-grid">
-        <div>
-          <span class="eyebrow">About the project</span>
-          <h2 class="section-title-lg">What is PowerPulse?</h2>
-          <p class="lead-text">
-            PowerPulse lets anyone remotely know whether electricity is currently available at a
-            registered location — a home, a pharmacy, a shop, or a clinic. A small IoT device
-            detects power changes and reports them to the backend, which stores every ON/OFF
-            event and shows the live status on a web dashboard.
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <div class="hero-badge-dot">⚡</div>
+            <span>IoT <strong>Electricity Monitoring</strong> — live demo</span>
+          </div>
+          <h1 class="hero-title reveal reveal-delay-1">
+            Know your power,<br><em>anywhere.</em>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            PowerPulse connects a small IoT device at your home or business to the
+            internet, so you always know the current electricity status — and exactly
+            when power went off and when it came back.
           </p>
-          <p class="lead-text mt" style="margin-top:14px">
-            The problem is everywhere: utility power is unpredictable, and by the time you find
-            out your shop has been without power, stock may already be spoiled. PowerPulse turns
-            the unknown into a constant you can watch, wherever you are.
-          </p>
-          <ul class="about-list">
-            <li><span class="check">✓</span>Live power status for each monitored location</li>
-            <li><span class="check">✓</span>Automatic alerts the moment power goes off or returns</li>
-            <li><span class="check">✓</span>A full history timeline of every power event</li>
-            <li><span class="check">✓</span>Monitor multiple locations from a single dashboard</li>
-            <li><span class="check">✓</span>Works with the IoT simulator today, real hardware later</li>
-          </ul>
-        </div>
-        <div>
-          <div class="card">
-            <span class="eyebrow">System overview</span>
-            <h3 class="section-title" style="margin-bottom:18px">How it all fits together</h3>
-            <div class="about-list">
-              <li><span class="check">①</span><div><strong style="color:var(--text)">IoT Device</strong><div class="muted" style="font-size:.88rem">Detects power state at the location and reports ON/OFF to the cloud.</div></div></li>
-              <li><span class="check">②</span><div><strong style="color:var(--text)">Backend API</strong><div class="muted" style="font-size:.88rem">Validates the device, records every event, and updates live status.</div></div></li>
-              <li><span class="check">③</span><div><strong style="color:var(--text)">Web Dashboard</strong><div class="muted" style="font-size:.88rem">Shows current status, alerts, and full history — any browser, any device.</div></div></li>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="/register.html" class="btn-primary-lg">
+              Get Started Free
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="/simulator/simulator.html" class="btn-outline-lg">
+              <span>▶</span> Watch the live demo
+            </a>
+          </div>
+          <div class="hero-trust reveal reveal-delay-4">
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              Real-time status
             </div>
-            <a class="btn btn-block mt" href="/register.html">Try the live demo</a>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+              Instant alerts
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              No hardware needed to demo
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-dashboard">
+            <div class="dashboard-bar">
+              <div class="db-dot"></div><div class="db-dot"></div><div class="db-dot"></div>
+            </div>
+            <div class="dashboard-body">
+              <div class="db-header">
+                <div class="db-title">My Locations · PowerPulse</div>
+                <div class="db-tag">Live</div>
+              </div>
+              <div class="db-chart">
+                <div class="db-bar" style="height:35%"></div>
+                <div class="db-bar" style="height:55%"></div>
+                <div class="db-bar" style="height:42%"></div>
+                <div class="db-bar active" style="height:75%"></div>
+                <div class="db-bar" style="height:60%"></div>
+                <div class="db-bar active" style="height:88%"></div>
+                <div class="db-bar" style="height:70%"></div>
+                <div class="db-bar active" style="height:92%"></div>
+              </div>
+              <div class="db-stats">
+                <div class="db-stat">
+                  <div class="db-stat-val">98<span style="font-size:.9rem;color:var(--accent)">%</span></div>
+                  <div class="db-stat-label">Uptime today</div>
+                  <div class="db-stat-change">🟢 Stable</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">3</div>
+                  <div class="db-stat-label">Locations</div>
+                  <div class="db-stat-change">Monitored</div>
+                </div>
+                <div class="db-stat">
+                  <div class="db-stat-val">5<span style="font-size:.9rem;color:var(--accent)">s</span></div>
+                  <div class="db-stat-label">Status delay</div>
+                  <div class="db-stat-change">⚡ Instant</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float-badge">
+            <div class="float-badge-icon">⚡</div>
+            <div class="float-badge-text">
+              <strong>Power restored</strong>
+              <span>My Home · just now</span>
+            </div>
+          </div>
+          <div class="hero-float-badge-2">
+            <div class="float-badge-2-val">🟢 ON</div>
+            <div class="float-badge-2-label">My Shop</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="how" style="padding-top:0">
-    <div class="container">
-      <div class="section-center">
-        <span class="eyebrow">How it works</span>
-        <h2 class="section-title-lg">Three steps to never wonder again</h2>
-        <p class="section-sub">From plug-in to peace of mind — the entire flow, demonstrated end-to-end with the built-in simulator.</p>
+  <!-- ── 3. USE-CASE TICKER ── -->
+  <div class="ticker-section">
+    <div class="ticker-label">Monitor the places that matter most</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track">
+        <div class="ticker-item"><div class="ticker-item-icon">🏠</div>Home</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">💊</div>Pharmacy</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🛍️</div>Shop</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏥</div>Clinic</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏢</div>Office</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">📦</div>Warehouse</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🌾</div>Farm</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏫</div>School</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏠</div>Home</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">💊</div>Pharmacy</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🛍️</div>Shop</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏥</div>Clinic</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏢</div>Office</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">📦</div>Warehouse</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🌾</div>Farm</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><div class="ticker-item-icon">🏫</div>School</div>
+        <div class="ticker-dot"></div>
       </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">1</span>
-          <h3>Register a location</h3>
-          <p>Create an account and add a location — your home, pharmacy, shop, or clinic.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">2</span>
-          <h3>Connect a device</h3>
-          <p>Register a device with its unique code. The IoT device (or simulator) starts reporting power state.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">3</span>
-          <h3>Watch it live</h3>
-          <p>See the status change in real time, get alerts on power events, and review the full history.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="features" style="padding-top:0">
-    <div class="container">
-      <div class="section-center">
-        <span class="eyebrow">Features</span>
-        <h2 class="section-title-lg">Everything the MVP covers</h2>
-        <p class="section-sub">A focused, working foundation — built to grow into a full commercial service.</p>
-      </div>
-      <div class="features">
-        <div class="card feature">
-          <div class="f-icon">🟢</div>
-          <h3>Current Status</h3>
-          <p>See at a glance whether power is available or unavailable at each monitored location.</p>
-        </div>
-        <div class="card feature">
-          <div class="f-icon">📊</div>
-          <h3>Full History</h3>
-          <p>A chronological timeline of every power OFF and power restoration event.</p>
-        </div>
-        <div class="card feature">
-          <div class="f-icon">🔔</div>
-          <h3>Instant Notifications</h3>
-          <p>Get alerted the moment power goes off or is restored at your locations.</p>
-        </div>
-        <div class="card feature">
-          <div class="f-icon">📍</div>
-          <h3>Multiple Locations</h3>
-          <p>Monitor your home, your pharmacy, your shop — all in one dashboard.</p>
-        </div>
-        <div class="card feature">
-          <div class="f-icon">🛰️</div>
-          <h3>Device-ready API</h3>
-          <p>A public IoT endpoint that a real ESP32-based device can use with zero backend changes.</p>
-        </div>
-        <div class="card feature">
-          <div class="f-icon">🧪</div>
-          <h3>Built-in Simulator</h3>
-          <p>No hardware needed to demo: the simulator triggers real power events through the same API.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="cta-band">
-      <h2>Ready to see it in action?</h2>
-      <p>Create an account and run the full demo in under two minutes.</p>
-      <a class="btn" href="/register.html">Get Started Free</a>
     </div>
   </div>
 
+  <!-- ── ABOUT THE PROJECT ── -->
+  <section class="features-section" id="about">
+    <div class="container">
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="section-label">About the project</div>
+          <h3 class="feature-title">What is <em>PowerPulse?</em></h3>
+          <p class="feature-desc">
+            PowerPulse lets anyone remotely know whether electricity is currently
+            available at a registered location — a home, a pharmacy, a shop, or a
+            clinic. A small IoT device detects power changes and reports them to the
+            backend, which stores every ON/OFF event and shows the live status on a
+            web dashboard.
+          </p>
+          <p class="feature-desc" style="margin-bottom:24px">
+            Utility power is unpredictable, and by the time you find out your shop has
+            been without power, stock may already be spoiled. PowerPulse turns the
+            unknown into a constant you can watch — wherever you are.
+          </p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Live power status for each monitored location</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Automatic alerts the moment power goes off or returns</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>A complete history timeline of every power event</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Works with the built-in simulator today, real hardware later</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-card">
+              <div class="fv-card-label">How it all fits together</div>
+              <div class="fv-list" style="margin-top:10px">
+                <div class="fv-list-item"><span class="fv-list-name">① IoT device detects power</span><span class="fv-pill blue">ON / OFF</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">② Backend logs every event</span><span class="fv-pill green">Recorded</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">③ Dashboard shows live status</span><span class="fv-pill blue">Real-time</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">④ You get alerted instantly</span><span class="fv-pill green">Alerts</span></div>
+              </div>
+            </div>
+            <div class="fv-row">
+              <div class="fv-card">
+                <div class="fv-card-label">Demo time</div>
+                <div class="fv-card-val">&lt; 2 min</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:20%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Setup steps</div>
+                <div class="fv-card-val">3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. FEATURES ── -->
+  <section class="features-section" id="features" style="padding-top:0">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-label reveal">Platform Features</div>
+        <h2 class="section-title reveal reveal-delay-1">Built for <em>peace of mind</em><br>at every scale</h2>
+        <p class="section-sub reveal reveal-delay-2">Every feature is designed to answer one question: is the power on, right now?</p>
+      </div>
+
+      <!-- Feature 1 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">01 — Live Status Dashboard</div>
+          <h3 class="feature-title">Every location,<br>one calm surface</h3>
+          <p class="feature-desc">See the current power status of every monitored location at a glance — home, pharmacy, shop, clinic — with device health and today's activity alongside.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Real-time ON/OFF status badges</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Device last-seen tracking</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Today's activity counts per location</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card">
+                <div class="fv-card-label">My Home</div>
+                <div class="fv-card-val" style="color:#059669">🟢 ON</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:96%;background:#10b981"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">My Pharmacy</div>
+                <div class="fv-card-val" style="color:#059669">🟢 ON</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:88%;background:#10b981"></div></div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Locations</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">My Home</span><span class="fv-pill green">POWER ON</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">My Pharmacy</span><span class="fv-pill green">POWER ON</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">My Shop</span><span class="fv-pill red">POWER OFF</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-row reverse">
+        <div class="feature-content reveal">
+          <div class="feature-number">02 — Instant Alerts</div>
+          <h3 class="feature-title">Know the moment power <br><em>leaves</em></h3>
+          <p class="feature-desc">Get notified the second power goes off — and the second it comes back. No refreshing, no checking, no surprises in the morning.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Power-off alerts with location name</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Restoration alerts when power returns</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Channel-ready engine — email, SMS, WhatsApp next</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-card">
+              <div class="fv-card-label">Recent alerts</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">Power off at My Shop</span><span class="fv-pill red">2m ago</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Power restored at My Home</span><span class="fv-pill green">1h ago</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">Device online · My Pharmacy</span><span class="fv-pill blue">Active</span></div>
+              </div>
+            </div>
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Alerts this week</div>
+                <div class="fv-card-val">14</div>
+                <div class="fv-card-bar"><div class="fv-card-bar-fill" style="width:64%"></div></div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Avg. delay</div>
+                <div class="fv-card-val">5s</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-row">
+        <div class="feature-content reveal">
+          <div class="feature-number">03 — Complete History</div>
+          <h3 class="feature-title">A timeline you can <em>trust</em></h3>
+          <p class="feature-desc">Every power event is stored with a timestamp. Reconstruct exactly what happened overnight, review it per location, and prepare for the analytics that are coming next.</p>
+          <div class="feature-checklist">
+            <div class="feature-check"><div class="check-icon">✓</div><span>Every ON/OFF change recorded</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>Filter history by location</span></div>
+            <div class="feature-check"><div class="check-icon">✓</div><span>The foundation for outage analytics</span></div>
+          </div>
+        </div>
+        <div class="feature-visual reveal reveal-delay-1">
+          <div class="feature-visual-inner">
+            <div class="fv-row">
+              <div class="fv-card fv-wide">
+                <div class="fv-card-label">Events today</div>
+                <div class="fv-card-val">12</div>
+              </div>
+              <div class="fv-card">
+                <div class="fv-card-label">Outages</div>
+                <div class="fv-card-val">2</div>
+              </div>
+            </div>
+            <div class="fv-card">
+              <div class="fv-card-label">Today's timeline</div>
+              <div class="fv-list" style="margin-top:8px">
+                <div class="fv-list-item"><span class="fv-list-name">08:12 — Power off · My Shop</span><span class="fv-pill red">OFF</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">08:45 — Power restored · My Shop</span><span class="fv-pill green">ON</span></div>
+                <div class="fv-list-item"><span class="fv-list-name">13:02 — Power off · My Shop</span><span class="fv-pill red">OFF</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. PHONE CAROUSEL ── -->
+  <section class="carousel-section" id="screens">
+    <div class="container">
+      <div class="carousel-header">
+        <div class="section-label reveal">The App</div>
+        <h2 class="section-title reveal reveal-delay-1">Your power,<br><em>in your pocket</em></h2>
+        <p class="section-sub reveal reveal-delay-2">Status, alerts, and history — beautifully adapted for any screen.</p>
+      </div>
+    </div>
+    <div class="carousel-zoom">
+      <button class="zoom-btn" id="zoomOut" aria-label="Zoom out">−</button>
+      <div class="zoom-pips" id="zoomPips"></div>
+      <button class="zoom-btn" id="zoomIn" aria-label="Zoom in">+</button>
+    </div>
+
+    <div class="carousel-stage" id="carouselStage">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="phone-card" data-pos="left2" data-index="0">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <div class="ps-topbar"><span class="ps-topbar-label">PowerPulse</span><span class="ps-dot"></span></div>
+                <div class="ps-hero-block">
+                  <div class="ps-hero-title">Good morning, Ada 👋</div>
+                  <div class="ps-hero-sub">2 of 3 locations are powered on.</div>
+                  <span class="ps-btn">View dashboard</span>
+                </div>
+                <div class="ps-cards">
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">🟢</div><div class="ps-card-text"><div class="ps-card-title" style="background:rgba(16,185,129,.5)"></div><div class="ps-card-sub" style="background:rgba(16,185,129,.2)"></div></div><div class="ps-card-val">ON</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3)">🔴</div><div class="ps-card-text"><div class="ps-card-title" style="background:rgba(239,68,68,.4)"></div><div class="ps-card-sub"></div></div><div class="ps-card-val" style="color:#dc2626">OFF</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">🟢</div><div class="ps-card-text"><div class="ps-card-title" style="background:rgba(16,185,129,.5)"></div><div class="ps-card-sub" style="background:rgba(16,185,129,.2)"></div></div><div class="ps-card-val">ON</div></div>
+                </div>
+                <div class="ps-nav">
+                  <div class="ps-nav-item"><div class="ps-nav-dot active"></div><div class="ps-nav-label active">Home</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Alerts</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">History</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-pos="left1" data-index="1">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <div class="ps-topbar"><span class="ps-topbar-label">Alerts</span><span class="ps-dot" style="background:#ef4444"></span></div>
+                <div class="ps-hero-block">
+                  <div class="ps-hero-title">🔔 2 new events</div>
+                  <div class="ps-hero-sub">Alerts you never asked for — but always wanted.</div>
+                </div>
+                <div class="ps-cards">
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3)">🔴</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Power off · My Shop</div></div><div class="ps-card-val" style="color:#dc2626">2m</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">🟢</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Power restored · My Home</div></div><div class="ps-card-val">1h</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">🟢</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Power restored · My Pharmacy</div></div><div class="ps-card-val">3h</div></div>
+                </div>
+                <div class="ps-nav">
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Home</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot active"></div><div class="ps-nav-label active">Alerts</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">History</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-pos="center" data-index="2">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <div class="ps-topbar"><span class="ps-topbar-label">History</span><span class="ps-dot"></span></div>
+                <div class="ps-hero-block">
+                  <div class="ps-hero-title">Today's timeline</div>
+                  <div class="ps-hero-sub">Every event, recorded.</div>
+                </div>
+                <div class="ps-cards">
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3)">🔴</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">08:12 · OFF · My Shop</div></div><div class="ps-card-val" style="color:#dc2626">OFF</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">🟢</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">08:45 · ON · My Shop</div></div><div class="ps-card-val">ON</div></div>
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3)">🔴</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">13:02 · OFF · My Shop</div></div><div class="ps-card-val" style="color:#dc2626">OFF</div></div>
+                </div>
+                <div class="ps-nav">
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Home</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Alerts</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot active"></div><div class="ps-nav-label active">History</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-pos="right1" data-index="3">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <div class="ps-topbar"><span class="ps-topbar-label">Setup</span><span class="ps-dot"></span></div>
+                <div class="ps-hero-block">
+                  <div class="ps-hero-title">Connect your device</div>
+                  <div class="ps-hero-sub">Three steps to never wonder again.</div>
+                  <span class="ps-btn">+ Add device</span>
+                </div>
+                <div class="ps-cards">
+                  <div class="ps-card"><div class="ps-card-icon">🏠</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">My Home</div></div><div class="ps-card-val" style="color:#059669">✓</div></div>
+                  <div class="ps-card"><div class="ps-card-icon">💊</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">My Pharmacy</div></div><div class="ps-card-val" style="color:#059669">✓</div></div>
+                  <div class="ps-card"><div class="ps-card-icon">🛍️</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">My Shop</div></div><div class="ps-card-val">+ connect</div></div>
+                </div>
+                <div class="ps-nav">
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Home</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Alerts</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">History</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card" data-pos="right2" data-index="4">
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <div class="ps-topbar"><span class="ps-topbar-label">Uptime</span><span class="ps-dot" style="background:#10b981"></span></div>
+                <div class="ps-hero-block">
+                  <div class="ps-hero-title">This week</div>
+                  <div class="ps-hero-sub">Your locations at a glance.</div>
+                </div>
+                <div class="ps-cards">
+                  <div class="ps-card"><div class="ps-card-icon" style="background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3)">📈</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Uptime average</div></div><div class="ps-card-val">97%</div></div>
+                  <div class="ps-card"><div class="ps-card-icon">⏱️</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Outages recorded</div></div><div class="ps-card-val">4</div></div>
+                  <div class="ps-card"><div class="ps-card-icon">🕰️</div><div class="ps-card-text"><div class="ps-hero-sub" style="font-size:7px;height:auto;color:var(--text-1);font-weight:600">Longest outage</div></div><div class="ps-card-val">3h 12m</div></div>
+                </div>
+                <div class="ps-nav">
+                  <div class="ps-nav-item"><div class="ps-nav-dot active"></div><div class="ps-nav-label active">Home</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">Alerts</div></div>
+                  <div class="ps-nav-item"><div class="ps-nav-dot"></div><div class="ps-nav-label">History</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;width:100%;margin-top:48px;">
+      <button class="carousel-btn" id="carouselPrev" aria-label="Previous screen">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="carouselNext" aria-label="Next screen">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── 6. STATS ── -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="24">0</span><span class="stat-suffix">h</span></div>
+          <div class="stat-label">Monitored daily</div>
+          <div class="stat-sublabel">Around the clock, every day</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Of events recorded</div>
+          <div class="stat-sublabel">Every ON/OFF change logged</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="5">0</span><span class="stat-suffix">s</span></div>
+          <div class="stat-label">Typical status delay</div>
+          <div class="stat-sublabel">Dashboard refresh interval</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-rule"></div>
+          <div class="stat-value"><span class="stat-num" data-target="0">0</span><span class="stat-suffix"> hw</span></div>
+          <div class="stat-label">Hardware needed to demo</div>
+          <div class="stat-sublabel">The built-in simulator covers it</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. PRICING ── -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-label reveal">Pricing</div>
+        <h2 class="section-title reveal reveal-delay-1">Simple, <em>honest</em> pricing</h2>
+        <p class="section-sub reveal reveal-delay-2">Start free, scale when you're ready. No hidden fees.</p>
+      </div>
+      <div class="pricing-toggle reveal">
+        <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+        <div class="toggle-switch" id="pricingToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle annual billing"></div>
+        <span class="toggle-label" id="annualLabel">Annual</span>
+        <div class="toggle-badge">Save 20%</div>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-starter">0</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-starter">&nbsp;</div>
+          <p class="pricing-desc">For personal use — try the full experience free.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>1 monitored location</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>1 connected device</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Live ON/OFF status</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>7-day event history</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>In-app notifications</span></div>
+          </div>
+          <a href="/register.html" class="pricing-cta">Get Started Free</a>
+        </div>
+        <div class="pricing-card featured reveal reveal-delay-1">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-pro">5</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-pro">&nbsp;</div>
+          <p class="pricing-desc">For busy homes and small businesses that can't afford surprises.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>10 monitored locations</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>10 connected devices</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Full event history</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Today's activity stats</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Priority support</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Email & WhatsApp alerts (soon)</span></div>
+          </div>
+          <a href="/register.html" class="pricing-cta">Get Started Free</a>
+        </div>
+        <div class="pricing-card reveal reveal-delay-2">
+          <div class="pricing-tier">Business</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount" id="price-ent">15</span>
+            <span class="price-period">&nbsp;/ mo</span>
+          </div>
+          <div class="price-annual-note" id="annual-note-ent">&nbsp;</div>
+          <p class="pricing-desc">For growing operations that want analytics and team access.</p>
+          <div class="pricing-divider"></div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Unlimited locations & devices</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Analytics & reports (coming)</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Multi-user access</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>API access</span></div>
+            <div class="pricing-feature"><div class="pricing-check">✓</div><span>Dedicated support</span></div>
+          </div>
+          <a href="#faq" class="pricing-cta">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. TESTIMONIALS ── -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label reveal">Early Feedback</div>
+        <h2 class="section-title reveal reveal-delay-1">People who never<br><em>wonder again</em></h2>
+        <p class="section-sub reveal reveal-delay-2">The problem is real everywhere power is unpredictable. Here's what users tell us after a few days.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card tall reveal">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"The first time power went off at 2am, I knew before the mechanic did. I checked my phone, saw the red alert for the shop, and was already awake and arranging the generator. That one night paid for the whole product."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AO</div>
+            <div>
+              <div class="author-name">Adaeze Okafor</div>
+              <div class="author-role">Pharmacy Owner · Lagos</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"I stopped sending someone to 'check the light' every morning. The history tells me exactly when we lost power overnight."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">YB</div>
+            <div>
+              <div class="author-name">Yusuf Bello</div>
+              <div class="author-role">Shop Manager · Kano</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Setup took me under two minutes with the simulator. I was genuinely surprised how fast it went from sign-up to a live alert."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CN</div>
+            <div>
+              <div class="author-name">Chiamaka Nwosu</div>
+              <div class="author-role">Homeowner · Abuja</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"Our fridges depend on power. Knowing the moment it drops lets us save the stock that matters — no more guessing in the morning."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ET</div>
+            <div>
+              <div class="author-name">Emeka Tobi</div>
+              <div class="author-role">Restaurant Owner · Port Harcourt</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="testimonial-quote">"For a clinic, power is life support for our vaccine storage. PowerPulse is the cheapest insurance we've ever bought."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NA</div>
+            <div>
+              <div class="author-name">Ngozi Ani</div>
+              <div class="author-role">Clinic Administrator · Enugu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. INTEGRATIONS ── -->
+  <section class="integrations-section" id="integrations">
+    <div class="container">
+      <div class="integrations-header">
+        <div class="section-label reveal">Alert channels & integrations</div>
+        <h2 class="section-title reveal reveal-delay-1">Built to meet people<br><em>where they are</em></h2>
+        <p class="section-sub reveal reveal-delay-2">The notification engine is separated from the core logic so new channels plug in without touching the power code.</p>
+      </div>
+      <div class="integrations-grid">
+        <div class="integration-tile reveal"><div class="integration-name">In-app alerts</div></div>
+        <div class="integration-tile reveal reveal-delay-1"><div class="integration-name">Email</div></div>
+        <div class="integration-tile reveal reveal-delay-2"><div class="integration-name">SMS</div></div>
+        <div class="integration-tile reveal reveal-delay-3"><div class="integration-name">WhatsApp</div></div>
+        <div class="integration-tile reveal"><div class="integration-name">Telegram</div></div>
+        <div class="integration-tile reveal reveal-delay-1"><div class="integration-name">Webhooks</div></div>
+        <div class="integration-tile reveal reveal-delay-2"><div class="integration-name">Slack</div></div>
+        <div class="integration-tile reveal reveal-delay-3"><div class="integration-name">Mobile app</div></div>
+        <div class="integration-tile reveal"><div class="integration-name">History export</div></div>
+        <div class="integration-tile reveal reveal-delay-1"><div class="integration-name">Public API</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 10. FAQ ── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-sidebar reveal">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Questions,<br><em>answered</em></h2>
+          <p class="section-sub">Can't find what you're looking for? Reach us at hello@powerpulse.app — we reply fast.</p>
+          <button class="faq-toggle-all" id="faqToggleAll">
+            <span id="faqToggleIcon">+</span> Expand all</button>
+        </div>
+        <div class="faq-list reveal reveal-delay-1" id="faqList">
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Do I need any hardware to try it?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">No. The built-in IoT simulator sends real power events through the exact same API a physical device would use, so you can experience the full flow — status, alerts, and history — with zero hardware.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              How does the IoT device report power?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Each device has a unique code. It calls POST /devices/status with ON or OFF, and the backend validates the code, logs the event, updates the live status, and fires an alert when the state actually changes.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Can I monitor more than one location?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes. Add unlimited locations on the Starter plan to explore — home, pharmacy, shop, and clinic all live on one dashboard. Paid plans scale the number of devices and add team features.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              When will SMS and WhatsApp alerts be available?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">The notification system is already separated from the core power logic, so new channels plug in without touching the event code. Email and WhatsApp are next on the roadmap, with SMS and Telegram to follow.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Is my data secure?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Passwords are hashed with bcrypt, sessions use signed JSON Web Tokens, and every user only ever sees their own locations and events. The API validates all input server-side.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+              Can I export my event history?
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">CSV export is on the roadmap. Today, the API returns the full event timeline for any location, and the history view is filterable per location.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. CTA BANNER ── -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="cta-content">
+          <div class="cta-label">⚡ Get Started Today</div>
+          <h2 class="cta-title">Ready to never<br><em>wonder again?</em></h2>
+          <p class="cta-sub">Create an account and run the full demo in under two minutes — no hardware needed.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="/register.html" class="btn-cta-primary">
+            Get Started Free
+            <span>→</span>
+          </a>
+          <a href="/simulator/simulator.html" class="btn-cta-ghost">Open the simulator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 12. FOOTER ── -->
   <footer class="footer">
     <div class="container">
-      <div class="brand" style="display:flex;justify-content:center"><span class="brand-icon">⚡</span>Power<span>Pulse</span></div>
-      <p style="margin-top:10px">PowerPulse MVP — IoT electricity monitoring. Built for the demo.</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="nav-logo">⚡ Power<span>Pulse</span></a>
+          <p class="footer-brand-desc">The simple way to know your power is on — from your home, pharmacy, shop, or clinic.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Twitter / X">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="TikTok">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Product</div>
+          <div class="footer-links">
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/history.html">History</a>
+            <a href="/setup.html">Setup</a>
+            <a href="/simulator/simulator.html">Simulator</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Company</div>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#testimonials">Feedback</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Support</div>
+          <div class="footer-links">
+            <a href="#">Help Center</a>
+            <a href="#">Documentation</a>
+            <a href="#">Security</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © 2026 PowerPulse. Design by <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a>
+        </div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="/js/app.js"></script>
+  <script src="/js/clearwave.js"></script>
   <script>
     if (API && API.token) window.location.href = '/dashboard.html';
   </script>

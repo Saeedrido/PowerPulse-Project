@@ -7,51 +7,70 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/clearwave.css">
 </head>
 <body>
-  <div class="topbar">
-    <a class="brand" href="/dashboard.html"><span class="brand-icon">⚡</span>Power<span>Pulse</span></a>
-    <nav>
-      <a href="/dashboard.html" class="active">Dashboard</a>
-      <a href="/history.html">History</a>
-      <a href="/setup.html">Setup</a>
-      <a href="#" id="logout">Log out</a>
-    </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="/history.html">History</a>
+    <a href="/setup.html">Setup</a>
+    <a href="/simulator/simulator.html" target="_blank">Simulator</a>
+    <a href="#" class="js-logout">Log out</a>
   </div>
 
-  <div class="container">
-    <div class="page-head">
-      <h1>My Locations</h1>
-      <p class="sub">Live power status across all your monitored locations.</p>
-    </div>
-
-    <div class="loc-list" id="locations"></div>
-    <div id="empty-state" class="empty" style="display:none">
-      <div class="big">⚡</div>
-      <p>No monitored locations yet.</p>
-      <p><a class="btn mt" href="/setup.html" style="margin-top:16px">Add your first location</a></p>
-    </div>
-
-    <div class="grid-2 mt">
-      <div class="card">
-        <h3 class="section-title">🔔 Notifications</h3>
-        <div id="notifications"><p class="muted">No notifications yet.</p></div>
+  <nav class="nav app-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">⚡ Power<span>Pulse</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="/dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="/history.html">History</a></li>
+        <li><a href="/setup.html">Setup</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/simulator/simulator.html" target="_blank" class="btn-ghost">Simulator</a>
+        <a href="#" id="logout" class="btn-primary">Log out</a>
       </div>
-      <div class="card">
-        <h3 class="section-title">🔗 IoT Simulator</h3>
-        <p class="muted">Trigger power events from the simulator to see live updates here.</p>
-        <a class="btn mt" href="/simulator/simulator.html" target="_blank">Open Simulator</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="app-page">
+    <div class="container">
+      <div class="page-head">
+        <div class="section-label">Live Overview</div>
+        <h1>My Locations</h1>
+        <p class="sub">Live power status across all your monitored locations.</p>
+      </div>
+
+      <div class="loc-list" id="locations"></div>
+      <div id="empty-state" class="empty" style="display:none">
+        <div class="big">⚡</div>
+        <p>No monitored locations yet.</p>
+        <p><a class="btn mt" href="/setup.html" style="margin-top:16px">Add your first location</a></p>
+      </div>
+
+      <div class="grid-2 mt">
+        <div class="card">
+          <h3 class="section-title">🔔 Notifications</h3>
+          <div id="notifications"><p class="muted">No notifications yet.</p></div>
+        </div>
+        <div class="card">
+          <h3 class="section-title">🔗 IoT Simulator</h3>
+          <p class="muted">Trigger power events from the simulator to see live updates here.</p>
+          <a class="btn mt" href="/simulator/simulator.html" target="_blank">Open Simulator</a>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <footer class="footer">
-    <div class="container">PowerPulse MVP — real-time power monitoring.</div>
-  </footer>
+  <footer class="app-footer">PowerPulse MVP — real-time power monitoring.</footer>
 
   <script src="/js/app.js"></script>
+  <script src="/js/clearwave.js"></script>
   <script src="/js/dashboard.js"></script>
 </body>
 </html>

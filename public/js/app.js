@@ -61,6 +61,14 @@ function statusBadge(status) {
   return `<span class="status ${cls}"><span class="dot"></span>${dot} ${label}</span>`;
 }
 
+document.querySelectorAll('.js-logout').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    API.logout();
+    window.location.href = '/index.html';
+  });
+});
+
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

@@ -7,74 +7,93 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/clearwave.css">
 </head>
 <body>
-  <div class="topbar">
-    <a class="brand" href="/dashboard.html"><span class="brand-icon">⚡</span>Power<span>Pulse</span></a>
-    <nav>
-      <a href="/dashboard.html">Dashboard</a>
-      <a href="/history.html">History</a>
-      <a href="/setup.html" class="active">Setup</a>
-      <a href="#" id="logout">Log out</a>
-    </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="/dashboard.html">Dashboard</a>
+    <a href="/history.html">History</a>
+    <a href="/setup.html">Setup</a>
+    <a href="/simulator/simulator.html" target="_blank">Simulator</a>
+    <a href="#" class="js-logout">Log out</a>
   </div>
 
-  <div class="container">
-    <div class="page-head">
-      <h1>Setup</h1>
-      <p class="sub">Add the locations you want to monitor and connect a device to each one.</p>
+  <nav class="nav app-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo">⚡ Power<span>Pulse</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="/dashboard.html">Dashboard</a></li>
+        <li><a href="/history.html">History</a></li>
+        <li><a href="/setup.html" class="active">Setup</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/simulator/simulator.html" target="_blank" class="btn-ghost">Simulator</a>
+        <a href="#" id="logout" class="btn-primary">Log out</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <div class="grid-2" style="margin-top:24px">
-      <div class="card">
-        <h3 class="section-title">Add a Location</h3>
-        <div class="error" id="err-loc"></div>
-        <form id="loc-form">
-          <div class="form-group">
-            <label for="loc-name">Location name</label>
-            <input id="loc-name" placeholder="e.g. My Home" required>
-          </div>
-          <div class="form-group">
-            <label for="loc-address">Address (optional)</label>
-            <input id="loc-address" placeholder="e.g. 12 Main Street">
-          </div>
-          <button class="btn btn-block" type="submit">Create Location</button>
-        </form>
+  <main class="app-page">
+    <div class="container">
+      <div class="page-head">
+        <div class="section-label">Device Management</div>
+        <h1>Setup</h1>
+        <p class="sub">Add the locations you want to monitor and connect a device to each one.</p>
       </div>
 
-      <div class="card">
-        <h3 class="section-title">Connect a Device</h3>
-        <div class="error" id="err-dev"></div>
-        <form id="dev-form">
-          <div class="form-group">
-            <label for="dev-code">Device code</label>
-            <input id="dev-code" placeholder="e.g. PP-DEMO-0001" required>
-          </div>
-          <div class="form-group">
-            <label for="dev-loc">Connect to location</label>
-            <select id="dev-loc"></select>
-          </div>
-          <button class="btn btn-block" type="submit">Connect Device</button>
-        </form>
-        <p class="muted" style="margin-top:14px;font-size:.86rem">The device code is printed on your PowerPulse IoT device (or shown on the simulator).</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="section-title">Add a Location</h3>
+          <div class="error" id="err-loc"></div>
+          <form id="loc-form">
+            <div class="form-group">
+              <label for="loc-name">Location name</label>
+              <input id="loc-name" placeholder="e.g. My Home" required>
+            </div>
+            <div class="form-group">
+              <label for="loc-address">Address (optional)</label>
+              <input id="loc-address" placeholder="e.g. 12 Main Street">
+            </div>
+            <button class="btn btn-block" type="submit">Create Location</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 class="section-title">Connect a Device</h3>
+          <div class="error" id="err-dev"></div>
+          <form id="dev-form">
+            <div class="form-group">
+              <label for="dev-code">Device code</label>
+              <input id="dev-code" placeholder="e.g. PP-DEMO-0001" required>
+            </div>
+            <div class="form-group">
+              <label for="dev-loc">Connect to location</label>
+              <select id="dev-loc"></select>
+            </div>
+            <button class="btn btn-block" type="submit">Connect Device</button>
+          </form>
+          <p class="muted" style="margin-top:14px;font-size:.86rem">The device code is printed on your PowerPulse IoT device (or shown on the simulator).</p>
+        </div>
+      </div>
+
+      <div class="card mt">
+        <h3 class="section-title">Your Devices</h3>
+        <div class="table-wrap">
+          <div id="devices-list"><p class="muted">Loading…</p></div>
+        </div>
       </div>
     </div>
+  </main>
 
-    <div class="card mt">
-      <h3 class="section-title">Your Devices</h3>
-      <div class="table-wrap">
-        <div id="devices-list"><p class="muted">Loading…</p></div>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="container">PowerPulse MVP — real-time power monitoring.</div>
-  </footer>
+  <footer class="app-footer">PowerPulse MVP — real-time power monitoring.</footer>
 
   <script src="/js/app.js"></script>
+  <script src="/js/clearwave.js"></script>
   <script src="/js/setup.js"></script>
 </body>
 </html>
