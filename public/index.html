@@ -4,58 +4,180 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PowerPulse — Know your power, anywhere</title>
+  <meta name="description" content="PowerPulse is an IoT electricity monitoring system that tells you in real time whether power is available at your home, pharmacy, or shop — even when you're away.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div class="topbar">
-    <div class="brand">Power<span>Pulse</span></div>
+    <div class="brand"><span class="brand-icon">⚡</span>Power<span>Pulse</span></div>
     <nav>
+      <a href="#about">About</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
       <a href="/login.html">Log in</a>
+      <a class="btn btn-sm" href="/register.html">Get Started</a>
     </nav>
   </div>
 
-  <section class="hero">
-    <div>
+  <header class="hero">
+    <div class="pill-row">
       <span class="pill">⚡ IoT Electricity Monitoring</span>
-      <span class="pill">🟢 Live Status</span>
+      <span class="pill">🟢 Real-time Status</span>
       <span class="pill">🔔 Instant Alerts</span>
     </div>
     <h1>Know if your power is <span>ON</span> — even when you're away</h1>
-    <p>
+    <p class="lead">
       PowerPulse connects a small IoT device at your home or business to the internet,
       so you always know the current electricity status and exactly when power went
-      off and when it came back.
+      off and when it came back — from anywhere in the world.
     </p>
     <div class="cta">
-      <a class="btn" href="/register.html">Get Started</a>
+      <a class="btn" href="/register.html">Get Started Free</a>
       <a class="btn btn-ghost" href="/login.html">Log in</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="n">Real-time</div><div class="l">Live status at every location</div></div>
+      <div class="stat"><div class="n">Event log</div><div class="l">Every ON/OFF change recorded</div></div>
+      <div class="stat"><div class="n">Multi-location</div><div class="l">Home, shop, pharmacy — one dashboard</div></div>
+      <div class="stat"><div class="n">0 hardware</div><div class="l">Demo works with the built-in simulator</div></div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">About the project</span>
+          <h2 class="section-title-lg">What is PowerPulse?</h2>
+          <p class="lead-text">
+            PowerPulse lets anyone remotely know whether electricity is currently available at a
+            registered location — a home, a pharmacy, a shop, or a clinic. A small IoT device
+            detects power changes and reports them to the backend, which stores every ON/OFF
+            event and shows the live status on a web dashboard.
+          </p>
+          <p class="lead-text mt" style="margin-top:14px">
+            The problem is everywhere: utility power is unpredictable, and by the time you find
+            out your shop has been without power, stock may already be spoiled. PowerPulse turns
+            the unknown into a constant you can watch, wherever you are.
+          </p>
+          <ul class="about-list">
+            <li><span class="check">✓</span>Live power status for each monitored location</li>
+            <li><span class="check">✓</span>Automatic alerts the moment power goes off or returns</li>
+            <li><span class="check">✓</span>A full history timeline of every power event</li>
+            <li><span class="check">✓</span>Monitor multiple locations from a single dashboard</li>
+            <li><span class="check">✓</span>Works with the IoT simulator today, real hardware later</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card">
+            <span class="eyebrow">System overview</span>
+            <h3 class="section-title" style="margin-bottom:18px">How it all fits together</h3>
+            <div class="about-list">
+              <li><span class="check">①</span><div><strong style="color:var(--text)">IoT Device</strong><div class="muted" style="font-size:.88rem">Detects power state at the location and reports ON/OFF to the cloud.</div></div></li>
+              <li><span class="check">②</span><div><strong style="color:var(--text)">Backend API</strong><div class="muted" style="font-size:.88rem">Validates the device, records every event, and updates live status.</div></div></li>
+              <li><span class="check">③</span><div><strong style="color:var(--text)">Web Dashboard</strong><div class="muted" style="font-size:.88rem">Shows current status, alerts, and full history — any browser, any device.</div></div></li>
+            </div>
+            <a class="btn btn-block mt" href="/register.html">Try the live demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" style="padding-top:0">
+    <div class="container">
+      <div class="section-center">
+        <span class="eyebrow">How it works</span>
+        <h2 class="section-title-lg">Three steps to never wonder again</h2>
+        <p class="section-sub">From plug-in to peace of mind — the entire flow, demonstrated end-to-end with the built-in simulator.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Register a location</h3>
+          <p>Create an account and add a location — your home, pharmacy, shop, or clinic.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Connect a device</h3>
+          <p>Register a device with its unique code. The IoT device (or simulator) starts reporting power state.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Watch it live</h3>
+          <p>See the status change in real time, get alerts on power events, and review the full history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" style="padding-top:0">
+    <div class="container">
+      <div class="section-center">
+        <span class="eyebrow">Features</span>
+        <h2 class="section-title-lg">Everything the MVP covers</h2>
+        <p class="section-sub">A focused, working foundation — built to grow into a full commercial service.</p>
+      </div>
+      <div class="features">
+        <div class="card feature">
+          <div class="f-icon">🟢</div>
+          <h3>Current Status</h3>
+          <p>See at a glance whether power is available or unavailable at each monitored location.</p>
+        </div>
+        <div class="card feature">
+          <div class="f-icon">📊</div>
+          <h3>Full History</h3>
+          <p>A chronological timeline of every power OFF and power restoration event.</p>
+        </div>
+        <div class="card feature">
+          <div class="f-icon">🔔</div>
+          <h3>Instant Notifications</h3>
+          <p>Get alerted the moment power goes off or is restored at your locations.</p>
+        </div>
+        <div class="card feature">
+          <div class="f-icon">📍</div>
+          <h3>Multiple Locations</h3>
+          <p>Monitor your home, your pharmacy, your shop — all in one dashboard.</p>
+        </div>
+        <div class="card feature">
+          <div class="f-icon">🛰️</div>
+          <h3>Device-ready API</h3>
+          <p>A public IoT endpoint that a real ESP32-based device can use with zero backend changes.</p>
+        </div>
+        <div class="card feature">
+          <div class="f-icon">🧪</div>
+          <h3>Built-in Simulator</h3>
+          <p>No hardware needed to demo: the simulator triggers real power events through the same API.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="container">
-    <div class="features">
-      <div class="card feature">
-        <h3>🟢 Current Status</h3>
-        <p>See at a glance whether power is available or unavailable at each monitored location.</p>
-      </div>
-      <div class="card feature">
-        <h3>📊 Full History</h3>
-        <p>A chronological timeline of every power OFF and power restoration event.</p>
-      </div>
-      <div class="card feature">
-        <h3>🔔 Instant Notifications</h3>
-        <p>Get alerted the moment power goes off or is restored at your locations.</p>
-      </div>
-      <div class="card feature">
-        <h3>📍 Multiple Locations</h3>
-        <p>Monitor your home, your pharmacy, your shop — all in one dashboard.</p>
-      </div>
+    <div class="cta-band">
+      <h2>Ready to see it in action?</h2>
+      <p>Create an account and run the full demo in under two minutes.</p>
+      <a class="btn" href="/register.html">Get Started Free</a>
     </div>
   </div>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="brand" style="display:flex;justify-content:center"><span class="brand-icon">⚡</span>Power<span>Pulse</span></div>
+      <p style="margin-top:10px">PowerPulse MVP — IoT electricity monitoring. Built for the demo.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
   <script>
     if (API && API.token) window.location.href = '/dashboard.html';
   </script>
-  <script src="/js/app.js"></script>
 </body>
 </html>

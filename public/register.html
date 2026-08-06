@@ -4,25 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create account — PowerPulse</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div class="auth-wrap">
-    <div class="card">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <a class="brand" href="/index.html"><span class="brand-icon">⚡</span>Power<span>Pulse</span></a>
+      </div>
       <h1>Create your account</h1>
+      <p class="sub">Start monitoring your locations in under two minutes.</p>
       <div class="error" id="err"></div>
       <form id="reg-form">
         <div class="form-group">
           <label for="name">Full name</label>
-          <input id="name" type="text" autocomplete="name" required>
+          <input id="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input id="email" type="email" autocomplete="email" required>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input id="password" type="password" autocomplete="new-password" minlength="6" required>
+          <input id="password" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required>
         </div>
         <button class="btn btn-block" type="submit">Create account</button>
       </form>

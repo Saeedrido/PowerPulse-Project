@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Setup — PowerPulse</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div class="topbar">
-    <div class="brand">Power<span>Pulse</span></div>
+    <a class="brand" href="/dashboard.html"><span class="brand-icon">⚡</span>Power<span>Pulse</span></a>
     <nav>
       <a href="/dashboard.html">Dashboard</a>
       <a href="/history.html">History</a>
@@ -18,7 +22,12 @@
   </div>
 
   <div class="container">
-    <div class="grid-2">
+    <div class="page-head">
+      <h1>Setup</h1>
+      <p class="sub">Add the locations you want to monitor and connect a device to each one.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px">
       <div class="card">
         <h3 class="section-title">Add a Location</h3>
         <div class="error" id="err-loc"></div>
@@ -49,15 +58,21 @@
           </div>
           <button class="btn btn-block" type="submit">Connect Device</button>
         </form>
-        <p class="muted mt">The device code is printed on your PowerPulse IoT device (or shown on the simulator).</p>
+        <p class="muted" style="margin-top:14px;font-size:.86rem">The device code is printed on your PowerPulse IoT device (or shown on the simulator).</p>
       </div>
     </div>
 
     <div class="card mt">
       <h3 class="section-title">Your Devices</h3>
-      <div id="devices-list"><p class="muted">Loading…</p></div>
+      <div class="table-wrap">
+        <div id="devices-list"><p class="muted">Loading…</p></div>
+      </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="container">PowerPulse MVP — real-time power monitoring.</div>
+  </footer>
 
   <script src="/js/app.js"></script>
   <script src="/js/setup.js"></script>
